@@ -1,0 +1,5 @@
+dist/
+public/
+tools/.state.json
+.idea/
+.vscode/

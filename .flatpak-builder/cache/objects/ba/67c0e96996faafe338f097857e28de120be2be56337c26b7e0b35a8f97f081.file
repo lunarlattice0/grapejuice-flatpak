@@ -1,0 +1,18 @@
+footer {
+    margin-top: 3rem;
+
+    &.stick-to-bottom {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+    }
+}
+
+h2 {
+    margin-top: 2rem;
+}
+
+a img.external-link-image {
+    height: .75em;
+    transform: translateY(-.5em);
+}

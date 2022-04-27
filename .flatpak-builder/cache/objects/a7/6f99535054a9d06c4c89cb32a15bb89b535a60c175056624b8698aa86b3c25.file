@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Roblox Studio
+Comment=Create Roblox Experiences
+Icon=$STUDIO_ICON
+Exec=$GRAPEJUICE_EXECUTABLE studio %u
+Categories=Development;
+StartupWMClass=RobloxStudioLauncherBeta.exe
+MimeType=x-scheme-handler/roblox-studio;application/x-roblox-rbxl;application/x-roblox-rbxlx

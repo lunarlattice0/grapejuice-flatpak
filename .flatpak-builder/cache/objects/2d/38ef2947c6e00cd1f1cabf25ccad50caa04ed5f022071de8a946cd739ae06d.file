@@ -1,0 +1,17 @@
+image.update-available-highlight {
+    color: #f46703;
+}
+
+image.fast-flags-unsaved-changes-highlight {
+    color: #f46703;
+}
+
+button.prefix-unsaved-changes-highlight {
+    color: #f46703;
+    font-weight: bold;
+}
+
+button.start-page-button {
+    min-width: 150px;
+    min-height: 70px;
+}

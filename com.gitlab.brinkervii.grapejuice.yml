@@ -1,0 +1,46 @@
+app-id: com.gitlab.brinkervii.grapejuice 
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+command: grapejuice
+
+finish_args:
+        - --share=network
+        - --socket=x11
+        - --share=ipc
+        - --socket=wayland
+        - --device=dri
+        - --socket=pulseaudio
+        - --filesystem=host
+modules:
+  - name: grapejuice
+    buildsystem: simple
+    build-options:
+        build-args:
+            - --share=network
+    build-commands: 
+      - PYTHONPATH=$(pwd)/src python3 -m grapejuice_packaging linux_package
+      - cp -r build/linux_package/usr/* /app
+      - mkdir /app/lib/python3.10
+      - mkdir /app/lib/python3.10/pip_deps
+      - pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps
+      # - mv /app/lib/python3/dist-packages /app/lib/python3.10/site-packages
+      # above line possibly unnecessary, since pip installs it???
+      # hack: overwrite grapejuice bins
+      - cp grapejuice /app/bin
+      - cp grapejuice-gui /app/bin
+      - cp grapejuiced /app/bin
+      - cp paths.py /app/lib/python3.10/pip_deps/grapejuice_common/
+    sources:
+      - type: file
+        path: hacks/xdg-mime
+      - type: file
+        path: hacks/modified_bins/grapejuice
+      - type: file
+        path: hacks/modified_bins/grapejuiced
+      - type: file
+        path: hacks/modified_bins/grapejuice-gui
+      - type: file
+        path: hacks/paths.py
+      - type: git
+        url: https://gitlab.com/brinkervii/grapejuice.git

@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: grapejuice
+Version: 4.14.2
+Summary: A wine+Roblox management application
+Home-page: https://gitlab.com/brinkervii/grapejuice
+Author: BrinkerVII
+Author-email: brinkervii@gmail.com
+License: GPL-3
+Keywords: grapejuice wine roblox studio
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: psutil
+Requires-Dist: pip
+Requires-Dist: PyGObject
+Requires-Dist: packaging
+Requires-Dist: wheel
+Requires-Dist: setuptools
+Requires-Dist: requests
+Requires-Dist: Unidecode
+Requires-Dist: Click
+
+# Grapejuice
+
+These days Roblox works quite well with Wine, though there are some minor issues running it. Grapejuice fills in the
+gaps around these issues, so you can experience Roblox to its fullest on your favourite Linux distribution.
+
+The primary gap-filler feature is the fact that Wine by default creates no protocol handlers, which is how Roblox
+functions at its core. Without protocol handling, you won't be able to launch Roblox Studio and Experiences from the
+website!
+
+Note that Grapejuice is unofficial software. This is not officially supported by Roblox.
+
+## Installing Grapejuice
+
+The installation guides can be found in the [documentation](https://brinkervii.gitlab.io/grapejuice/docs/).
+
+## Troubleshooting
+
+Are you experiencing some trouble running Roblox Studio with Grapejuice? Please check out
+the [troubleshooting guide](https://brinkervii.gitlab.io/grapejuice/docs/Troubleshooting).
+
+## Features
+
+- Sets up a Wine prefix automatically
+- Edit Roblox experiences from the website
+- Enjoy Roblox experiences by launching them from the website
+- FFlag editor for tweaking Roblox's behaviour
+
+

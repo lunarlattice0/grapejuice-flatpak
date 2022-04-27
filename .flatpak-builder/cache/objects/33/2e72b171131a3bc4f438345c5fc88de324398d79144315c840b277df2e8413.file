@@ -1,0 +1,13 @@
+[Application]
+name=com.gitlab.brinkervii.grapejuice
+runtime=org.freedesktop.Platform/x86_64/21.08
+sdk=org.freedesktop.Sdk/x86_64/21.08
+command=grapejuice
+
+[Extension com.gitlab.brinkervii.grapejuice.Locale]
+directory=share/runtime/locale
+autodelete=true
+locale-subset=true
+
+[Build]
+built-extensions=com.gitlab.brinkervii.grapejuice.Locale;

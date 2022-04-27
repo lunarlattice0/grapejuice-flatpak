@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Roblox App
+Comment=Experience the Metaverse!
+Icon=$PLAYER_ICON
+Exec=$GRAPEJUICE_EXECUTABLE app
+Categories=Game;
+StartupWMClass=RobloxPlayer.exe

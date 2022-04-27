@@ -1,0 +1,5 @@
+pytest
+coverage
+pyinstaller
+pylint
+PyGObject-stubs

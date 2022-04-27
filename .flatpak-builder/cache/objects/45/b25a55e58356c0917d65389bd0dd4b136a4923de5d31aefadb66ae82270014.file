@@ -1,0 +1,2 @@
+recursive-include src/grapejuice_common/assets *
+recursive-exclude src/grapejuice_common/assets *.glade~

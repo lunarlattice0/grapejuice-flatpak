@@ -1,0 +1,30 @@
+{% extends "layout/_base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/styles/for-page/index.scss" />
+{% endblock %}
+
+{% block main %}
+
+<div class="container w-100 h-100 text-center d-flex">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="px-3">
+            <h1>Grapejuice</h1>
+
+            <p class="lead">
+                Grapejuice is a Wine wrapper application that is tailored to Roblox.
+                The aim is to make running Roblox on Linux as painless as possible.
+            </p>
+
+            <p class="lead">
+                <a class="btn btn-lg btn-primary fw-bold border-white bg-primary" href="/docs">
+                    Get started
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

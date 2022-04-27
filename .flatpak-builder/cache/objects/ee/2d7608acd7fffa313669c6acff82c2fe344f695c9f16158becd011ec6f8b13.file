@@ -1,0 +1,81 @@
+image: registry.gitlab.com/brinkervii/grapejuice-ci-image/master
+
+stages:
+    - test
+    - package
+    - deploy
+    - release
+
+grapejuice:quality_control:
+    stage: test
+    script:
+        - export PYTHONPATH=$(pwd)/src
+        - python3 -m pip install -r requirements.dev.txt
+        - python3 -m pip install -r requirements.txt
+        - python3 -m pylint src
+        - python3 -m pytest tests
+
+grapejuice:test_local_installation:
+    stage: test
+    script:
+        - ./install.py
+
+grapejuice:linux_package:
+    stage: package
+    artifacts:
+        expire_in: 1 week
+        paths:
+            - artifacts/
+    script:
+        - export PYTHONPATH=$(pwd)/src
+        - python3 -m pip install -r requirements.dev.txt
+        - python3 -m pip install -r requirements.txt
+        - python3 -m grapejuice_packaging linux_package --dist-dir artifacts/linux_package
+    only:
+        - master
+        - staging
+        - develop
+
+grapejuice:debian_package:
+    stage: package
+    artifacts:
+        expire_in: 1 week
+        paths:
+            - artifacts/
+    script:
+        - export PYTHONPATH=$(pwd)/src
+        - python3 -m grapejuice_packaging debian_package --dist-dir artifacts/debian_package
+    only:
+        - master
+        - staging
+        - develop
+
+pages:
+    stage: deploy
+    artifacts:
+        paths:
+            - public
+    script:
+        - pushd ./documentation
+        - make dist
+        - popd
+        - mkdir public
+        - cp -frax ./documentation/dist/* ./public
+        - bash ./ci_scripts/update_repositories.sh
+        - bash -c 'source ./documentation/venv/bin/activate && python3 ./documentation/tools/sitemap.py grapejuice public public/sitemap.html'
+        - ls -hal public
+    only:
+        - master
+
+make_release:
+    stage: release
+    image: registry.gitlab.com/gitlab-org/release-cli:latest
+    rules:
+        -   if: $CI_COMMIT_TAG
+    script:
+        - echo "Running the release job."
+    release:
+        name: 'Release $CI_COMMIT_TAG'
+        description: 'Release created using the release-cli.'
+        tag_name: '$CI_COMMIT_TAG'
+        ref: '$CI_COMMIT_TAG'

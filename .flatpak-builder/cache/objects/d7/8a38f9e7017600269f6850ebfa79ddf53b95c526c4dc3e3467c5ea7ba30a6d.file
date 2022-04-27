@@ -1,0 +1,5 @@
+[Runtime]
+name=com.gitlab.brinkervii.grapejuice.Debug
+
+[ExtensionOf]
+ref=app/com.gitlab.brinkervii.grapejuice/x86_64/master

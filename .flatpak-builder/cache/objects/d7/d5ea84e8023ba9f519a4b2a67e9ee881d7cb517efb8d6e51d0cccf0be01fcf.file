@@ -1,0 +1,58 @@
+{
+  "id" : "com.gitlab.brinkervii.grapejuice",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "21.08",
+  "runtime-commit" : "fcf3dbb56c117835216058acfa99ae280d713029f8d674e1b56e019a20ed082d",
+  "sdk" : "org.freedesktop.Sdk",
+  "sdk-commit" : "f31334d7fc5ff5ec93766189a7e47bfb3369a9a7154767adb46c4495530c1d1c",
+  "command" : "grapejuice",
+  "modules" : [
+    {
+      "name" : "grapejuice",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "hacks/xdg-mime",
+          "type" : "file"
+        },
+        {
+          "path" : "hacks/modified_bins/grapejuice",
+          "type" : "file"
+        },
+        {
+          "path" : "hacks/modified_bins/grapejuiced",
+          "type" : "file"
+        },
+        {
+          "path" : "hacks/modified_bins/grapejuice-gui",
+          "type" : "file"
+        },
+        {
+          "path" : "hacks/paths.py",
+          "type" : "file"
+        },
+        {
+          "url" : "https://gitlab.com/brinkervii/grapejuice.git",
+          "commit" : "465f44280ed33d0aa3c5c972ea9ad3ea65677a28",
+          "type" : "git"
+        }
+      ],
+      "build-options" : {
+        "build-args" : [
+          "--share=network"
+        ]
+      },
+      "build-commands" : [
+        "PYTHONPATH=$(pwd)/src python3 -m grapejuice_packaging linux_package",
+        "cp -r build/linux_package/usr/* /app",
+        "mkdir /app/lib/python3.10",
+        "mkdir /app/lib/python3.10/pip_deps",
+        "pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps",
+        "cp grapejuice /app/bin",
+        "cp grapejuice-gui /app/bin",
+        "cp grapejuiced /app/bin",
+        "cp paths.py /app/lib/python3.10/pip_deps/grapejuice_common/"
+      ]
+    }
+  ]
+}

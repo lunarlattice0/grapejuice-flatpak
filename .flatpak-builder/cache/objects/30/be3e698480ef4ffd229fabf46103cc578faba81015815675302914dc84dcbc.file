@@ -1,0 +1,24 @@
+[Application]
+name=com.gitlab.brinkervii.grapejuice
+runtime=org.freedesktop.Platform/x86_64/21.08
+sdk=org.freedesktop.Sdk/x86_64/21.08
+command=grapejuice
+
+[Context]
+shared=network;ipc;
+sockets=x11;wayland;pulseaudio;
+devices=dri;
+filesystems=host;
+
+[Extension com.gitlab.brinkervii.grapejuice.Locale]
+directory=share/runtime/locale
+autodelete=true
+locale-subset=true
+
+[Extension com.gitlab.brinkervii.grapejuice.Debug]
+directory=lib/debug
+autodelete=true
+no-autodownload=true
+
+[Build]
+built-extensions=com.gitlab.brinkervii.grapejuice.Locale;com.gitlab.brinkervii.grapejuice.Debug;

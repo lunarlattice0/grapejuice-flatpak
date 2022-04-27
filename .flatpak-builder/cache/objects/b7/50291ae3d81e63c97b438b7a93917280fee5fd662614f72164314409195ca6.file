@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+[remote "origin"]
+	url = https://gitlab.com/brinkervii/grapejuice.git
+	fetch = +refs/*:refs/*
+[transfer]
+	fsckObjects = 1
