@@ -1,5 +1,0 @@
-[Runtime]
-name=com.gitlab.brinkervii.grapejuice.Locale
-
-[ExtensionOf]
-ref=app/com.gitlab.brinkervii.grapejuice/x86_64/master

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Grapejuice
-Comment=Manage Roblox
-Icon=$GRAPEJUICE_ICON
-Exec=$GRAPEJUICE_GUI_EXECUTABLE
-Categories=Development;
-StartupWMClass=Grapejuice

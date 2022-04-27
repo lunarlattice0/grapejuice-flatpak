@@ -1,8 +1,0 @@
-main {
-    position: relative;
-    top: 25vh;
-
-    .cover-container {
-        max-width: 600px;
-    }
-}
