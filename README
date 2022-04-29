@@ -1,5 +1,7 @@
 GJTestRepo is the flatpak repo.
 
+YOU MUST DOWNLOAD GJTestRepo LOCALLY BEFORE RUNNING THE COMMANDS BELOW!
+
 Run the following commands to install the flatpak:
 $ flatpak --user remote-add --no-gpg-verify grapejuiceTest GJTestRepo
 $ flatpak --user install grapejuiceTest com.gitlab.brinkervii.grapejuice
