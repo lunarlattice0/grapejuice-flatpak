@@ -95,7 +95,9 @@ def assets_directory() -> Path:
 def locale_directory() -> Path:
     locale_directory_candidates = [
         local_share_locale(),
-        Path("/app/share/locale")
+        Path("/app/share/runtime/locale"),
+        Path("/app/share/locale"),
+        Path("/app/locales")
     ]
 
     if "GRAPEJUICE_LOCALE_DIRECTORY" in os.environ:
