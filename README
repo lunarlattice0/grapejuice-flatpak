@@ -11,3 +11,4 @@ To build the flatpak by yourself, run
 2. run_bash.sh and verify that the container works.
 3. export.sh (generates GJTestRepo)
 
+PLEASE NOTE: WINE IS IN THE PROCESS OF BEING IMPLEMENTED
