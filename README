@@ -13,4 +13,4 @@ To build the flatpak by yourself, run
 
 PLEASE NOTE: WINE IS IN THE PROCESS OF BEING IMPLEMENTED
 
-The wine builds stored in wine_builds are repackaged from community-sourced builds, as retrieved from [here](https://brinkervii.gitlab.io/grapejuice/docs/Guides/Installing-Wine.html). I am not liable for any damages caused by the usage of the builds.
+The wine builds stored in wine_builds are repackaged from community-sourced builds, as retrieved from (https://brinkervii.gitlab.io/grapejuice/docs/Guides/Installing-Wine.html). I am not liable for any damages caused by the usage of the builds.
