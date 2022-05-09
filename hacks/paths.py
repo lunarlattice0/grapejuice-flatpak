@@ -64,7 +64,7 @@ def grapejuice_configuration_directory() -> Path:
 
 
 def grapejuice_user_settings() -> Path:
-    return grapejuice_configuration_directory() / "user_settings.json"
+    return Path("/app/user_settings.json")
 
 
 def wineprefixes_directory() -> Path:
