@@ -68,7 +68,7 @@ modules:
       # hack: install wine
       - tar --use-compress-program=unzstd -xvf wine77.tar.zst
       - mv wine-tkg-staging-fsync-git-7.7.r0.g9df73ee3 /app/patched_wine
-      - cp user_settings.json /app/
+      - cp user_settings.json /app
     sources:
       - type: file
         url: https://github.com/Thelolguy1/grapejuice-flatpak/raw/implement-wine/patched-wine/wine77.tar.zst
