@@ -64,7 +64,12 @@ def grapejuice_configuration_directory() -> Path:
 
 
 def grapejuice_user_settings() -> Path:
-    return grapejuice_configuration_directory() / "user_settings.json"
+    #return Path("~/.local/user_settings.json")
+
+    user_settings_path = Path.home() / "user_settings.json"
+    if not user_settings_path.is_file():
+        os.system("cp /app/user_settings.json ~/")
+    return user_settings_path
 
 
 def wineprefixes_directory() -> Path:
