@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Grapejuice
+Comment=Manage Roblox
+Icon=com.gitlab.brinkervii.grapejuice.gui
+Exec=grapejuice gui
+Categories=Development;
+StartupWMClass=Grapejuice
