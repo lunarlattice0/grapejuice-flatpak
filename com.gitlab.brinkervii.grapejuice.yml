@@ -71,7 +71,7 @@ modules:
       # install grapejuice desktop entry
       - mkdir -p /app/share/applications
       - tar -xvzf desktop.tar.gz 
-      - cp -r desktop /app/share/applications
+      - cp -r desktop/* /app/share/applications
       # install grapejuice icons
       - mkdir -p /app/share/icons/
       - tar -xvzf hicolor.tar.gz 
