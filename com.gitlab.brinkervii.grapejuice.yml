@@ -71,7 +71,7 @@ modules:
       # normal grapejuice desktop entries aren't exported anyway, so there's no need to delete them.
       # install grapejuice desktop entry
       - mkdir -p /app/share/applications
-      - cp -r desktop /app/share/applications
+      - cp desktop/* /app/share/applications
       # install grapejuice icons
       - mkdir -p /app/share/icons/
       - cp -r hicolor /app/share/icons/
