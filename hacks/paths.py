@@ -68,7 +68,8 @@ def grapejuice_user_settings() -> Path:
 
     user_settings_path = Path.home() / "user_settings.json"
     if not user_settings_path.is_file():
-        os.system("cp /app/user_settings.json ~/")
+        os.system("cp -n /app/user_settings.json ~/")
+        print("copied usersettings from template")
     return user_settings_path
 
 
