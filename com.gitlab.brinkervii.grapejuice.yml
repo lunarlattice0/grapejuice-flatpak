@@ -13,10 +13,10 @@ finish-args:
         - --device=dri
         - --socket=pulseaudio
         - --allow=multiarch
-        - --env=LD_LIBRARY_PATH=/app/lib:/app/lib32
-sdk-extensions:
-        - org.freedesktop.Sdk.Compat.i386
-        - org.freedesktop.Sdk.Extension.toolchain-i386
+        #- --env=LD_LIBRARY_PATH=/app/lib:/app/lib32
+        #sdk-extensions:
+        #- org.freedesktop.Sdk.Compat.i386
+        #- org.freedesktop.Sdk.Extension.toolchain-i386
 
 add-extensions:
         org.freedesktop.Platform.Compat.i386:
@@ -38,10 +38,10 @@ add-extensions:
                 download-if: active-gl-driver
                 enable-if: active-gl-driver
 modules:
-  - name: compat
-    buildsystem: simple
-    build-commands:
-      - mkdir -p /app/lib/i386-linux-gnu /app/lib/debug/lib/i386-linux-gnu
+  #- name: compat
+  #  buildsystem: simple
+  #  build-commands:
+  #    - mkdir -p /app/lib/i386-linux-gnu /app/lib/debug/lib/i386-linux-gnu
   - name: bundle-setup
     buildsystem: simple
     build-commands:
