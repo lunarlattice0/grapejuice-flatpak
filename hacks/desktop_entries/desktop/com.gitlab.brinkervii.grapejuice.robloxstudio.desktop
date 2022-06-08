@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Roblox Studio
+Name=Roblox Studio (Flatpak)
 Comment=Create Roblox Experiences
 Icon=com.gitlab.brinkervii.grapejuice.robloxstudio
 Exec=grapejuice studio %u

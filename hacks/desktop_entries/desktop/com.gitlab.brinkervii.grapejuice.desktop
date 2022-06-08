@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Grapejuice
+Name=Grapejuice (Flatpak)
 Comment=Manage Roblox
 Icon=com.gitlab.brinkervii.grapejuice
 Exec=grapejuice gui
