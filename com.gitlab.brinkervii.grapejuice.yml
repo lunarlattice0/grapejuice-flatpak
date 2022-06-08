@@ -83,7 +83,7 @@ modules:
       - cp -r desktop_entries/hicolor /app/share/icons/
     sources:
       - type: file
-        url: https://github.com/Thelolguy1/grapejuice-flatpak/raw/implement-wine/patched-wine/wine77.tar.zst
+        path: patched-wine/wine77.tar.zst
         sha256: cd617aea3f4f084915794045b6dba6dad79be2b054d88e9b171237e5c2cf62c8
       - type: git
         url: https://gitlab.com/brinkervii/grapejuice.git
