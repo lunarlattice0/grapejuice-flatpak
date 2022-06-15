@@ -29,6 +29,4 @@ To build the flatpak by yourself, run
 3. export.sh (generates GJTestRepo)
 
 ## Disclaimer
-PLEASE NOTE: ROBLOX PLAYER DOES NOT FUNCTION YET, DUE TO ISSUES WITH VMPROTECT
-
 The wine builds stored in wine_builds are repackaged from community-sourced builds, as retrieved from (https://brinkervii.gitlab.io/grapejuice/docs/Guides/Installing-Wine.html). I am not liable for any damages caused by the usage of the builds.
