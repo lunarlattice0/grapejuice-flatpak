@@ -18,7 +18,6 @@ finish-args:
 sdk-extensions:
         - org.freedesktop.Sdk.Compat.i386
         - org.freedesktop.Sdk.Extension.toolchain-i386
-        - org.freedesktop.Sdk.Extension.mingw-w64
 
 add-extensions:
         org.freedesktop.Platform.Compat.i386:
