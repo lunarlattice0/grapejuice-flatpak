@@ -5,10 +5,11 @@ Please note, as this version is still a work-in-progress, proceed with caution a
 
 For more information, please read the [disclaimers](https://github.com/FazlyMR/grapejuice-flatpak/edit/master/README.md#disclaimer) here.
 ## Installation
-*grapejuice-flatpak* can be installed in two ways: through an included bash script, or manually. 
+*grapejuice-flatpak* can be installed in two ways: through a simplified included bash script, or manually. 
 
-But first, please install the following Flatpak dependencies with the following commands
+But first, please add the Flathub repository and install the following Flatpak dependencies with the following commands
 ```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install org.freedesktop.Platform/x86_64/21.08
 flatpak install app/org.winehq.Wine/x86_64/stable-21.08
 ```
@@ -24,9 +25,8 @@ Run ./install.sh to install, or ./uninstall.sh to uninstall.
 ## Manual installation
 
 ### Step 1
-Add Flathub and GJTestRepo Flatpak repositories
+Add the GJTestRepo Flatpak repository
 ```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user remote-add --no-gpg-verify grapejuiceTest GJTestRepo
 ```
 ### Step 2
@@ -43,7 +43,7 @@ To build the flatpak by yourself, run
 3. export.sh (generates GJTestRepo)
 
 ## Disclaimer
-The wine builds stored in wine_builds are repackaged from community-sourced builds, as retrieved from (https://brinkervii.gitlab.io/grapejuice/docs/Guides/Installing-Wine.html). I am not liable for any damages caused by the usage of the builds.
+The wine builds stored in wine_builds are repackaged from community-sourced builds, as retrieved from (https://brinkervii.gitlab.io/grapejuice/docs/Guides/Installing-Wine.html). I, Thelolguy1, am not liable for any damages caused by the usage of the builds.
 
 ## Honorable Mentions
 Thank you to Infinitybeond1, LithRakoon, Soikr, z-ffqq, and others for testing and development.
