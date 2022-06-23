@@ -1,26 +1,40 @@
 # grapejuice-flatpak
+*grapejuice-flatpak* is a community-built Flatpak version of *[grapejuice](https://gitlab.com/brinkervii/grapejuice)*, a utility program to easily run and manage both Roblox Player and Studio on Linux originally developed by [brinkervii](https://gitlab.com/brinkervii) on GitLab.
+
+Please note, as this version is still a work-in-progress, proceed with caution and at your own risk.
+
+For more information, please read the [disclaimers](https://github.com/FazlyMR/grapejuice-flatpak/edit/master/README.md#disclaimer) here.
 ## Installation
-### Step 1
-Download the GJTestRepo locally by running the following commands
+*grapejuice-flatpak* can be installed in two ways: through an included bash script, or manually. 
+
+But first, please install the following Flatpak dependencies with the following commands
+```bash
+flatpak install org.freedesktop.Platform/x86_64/21.08
+flatpak install app/org.winehq.Wine/x86_64/stable-21.08
+```
+Then, clone this repository and enter the folder in which it is then stored with the following commands
 ```bash
 git clone https://github.com/Thelolguy1/grapejuice-flatpak.git
 cd grapejuice-flatpak
 ```
-### Step 2
-Add the flathub and the GJTestRepo
+
+## Simplified installation
+Run ./install.sh to install, or ./uninstall.sh to uninstall.
+
+## Manual installation
+
+### Step 1
+Add Flathub and GJTestRepo Flatpak repositories
 ```bash
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user remote-add --no-gpg-verify grapejuiceTest GJTestRepo
 ```
-### Step 3
-Finally install the grapejuice flatpak
+### Step 2
+Finally install the *grapejuice-flatpak* Flatpak
 ```bash
 flatpak --user install grapejuiceTest com.gitlab.brinkervii.grapejuice
 ```
-_If you want a global installation remove the '--user' flag from Step 2/3_
-
-## Simplified installation
-You can run ./install.sh and ./uninstall.sh for an automated install
+_If you want a global (system-wide) installation, please remove the '--user' flag from steps 1 and 2._
 
 ## Build It Yourself
 To build the flatpak by yourself, run
