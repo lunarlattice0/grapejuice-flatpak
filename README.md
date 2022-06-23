@@ -7,7 +7,7 @@ For more information, please read the [disclaimers](https://github.com/FazlyMR/g
 ## Installation
 *grapejuice-flatpak* can be installed in two ways: through a simplified included bash script, or manually. 
 
-But first, please add the Flathub repository and install the following Flatpak dependencies with the following commands
+But first, add the Flathub repository and install the following dependencies with the following commands
 ```bash
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install org.freedesktop.Platform/x86_64/21.08
@@ -30,7 +30,7 @@ Add the GJTestRepo Flatpak repository
 flatpak --user remote-add --no-gpg-verify grapejuiceTest GJTestRepo
 ```
 ### Step 2
-Finally install the *grapejuice-flatpak* Flatpak
+Finally install *grapejuice-flatpak*
 ```bash
 flatpak --user install grapejuiceTest com.gitlab.brinkervii.grapejuice
 ```
