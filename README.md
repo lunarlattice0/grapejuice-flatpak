@@ -4,37 +4,37 @@
 Please note, as this version is still a work-in-progress, proceed with caution and at your own risk.
 
 For more information, please read the [disclaimers](https://github.com/FazlyMR/grapejuice-flatpak/edit/master/README.md#disclaimer) here.
-## Installation
+## Installation Introductions
 *grapejuice-flatpak* can be installed in two ways: through a simplified included bash script, or manually. 
 
-But first, add the Flathub repository and install the following dependencies with the following commands
-```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install org.freedesktop.Platform/x86_64/21.08
-flatpak install app/org.winehq.Wine/x86_64/stable-21.08
-```
-Then, clone this repository and enter the folder in which it is then stored with the following commands
+But first, clone this repository and enter the folder in which it is then stored with the following commands
 ```bash
 git clone https://github.com/Thelolguy1/grapejuice-flatpak.git
 cd grapejuice-flatpak
 ```
 
-## Simplified installation
+## Simplified Installation
 Run ./install.sh to install, or ./uninstall.sh to uninstall.
 
-## Manual installation
+## Manual Installation
 
 ### Step 1
+```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install org.freedesktop.Platform/x86_64/21.08
+flatpak install app/org.winehq.Wine/x86_64/stable-21.08
+```
+### Step 2
 Add the GJTestRepo Flatpak repository
 ```bash
 flatpak --user remote-add --no-gpg-verify grapejuiceTest GJTestRepo
 ```
-### Step 2
+### Step 3
 Finally install *grapejuice-flatpak*
 ```bash
 flatpak --user install grapejuiceTest com.gitlab.brinkervii.grapejuice
 ```
-_If you want a global (system-wide) installation, please remove the '--user' flag from steps 1 and 2._
+_If you want a global (system-wide) installation, please remove the '--user' flag from steps 2 and 3._
 
 ## Build It Yourself
 To build the flatpak by yourself, run
