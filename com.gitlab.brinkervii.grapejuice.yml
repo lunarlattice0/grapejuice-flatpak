@@ -77,8 +77,8 @@ modules:
       - cp modified_bins/grapejuice-gui /app/bin
       - cp modified_bins/grapejuiced /app/bin
       # install wine
-      - tar --use-compress-program=unzstd -xvf wine77.tar.zst
-      - mv wine-tkg-staging-fsync-git-7.7.r0.g9df73ee3 /app/patched_wine
+      - mkdir -p /app/patched_wine
+      - tar --use-compress-program=unzstd -xvf wine72.tar.zst -C /app/patched_wine
       # normal grapejuice desktop entries aren't exported anyway, so there's no need to delete them.
       # install grapejuice desktop entry
       - mkdir -p /app/share/applications
@@ -88,8 +88,9 @@ modules:
       - cp -r desktop_entries/hicolor /app/share/icons/
     sources:
       - type: file
-        path: patched-wine/wine77.tar.zst
-        sha256: cd617aea3f4f084915794045b6dba6dad79be2b054d88e9b171237e5c2cf62c8
+        url: https://github.com/Thelolguy1/grapejuice-wine-builds/releases/download/v1.0/wine72.tar.zst
+        # It was a terrible idea to package a 100+mb binary.
+        sha256: 25753400d383c3f275bd2a7025036afbe995fa627137981ddf89eafc4c50ac73
       - type: git
         url: https://gitlab.com/brinkervii/grapejuice.git
       - type: dir
