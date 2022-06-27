@@ -77,8 +77,8 @@ modules:
       - cp modified_bins/grapejuice-gui /app/bin
       - cp modified_bins/grapejuiced /app/bin
       # install wine
-      - mkdir -p /app/patched_wine
-      - tar --use-compress-program=unzstd -xvf wine72.tar.zst -C /app/patched_wine
+      - tar --use-compress-program=unzstd -xvf wine72.tar.zst
+      - mv wine72 /app/patched_wine
       # normal grapejuice desktop entries aren't exported anyway, so there's no need to delete them.
       # install grapejuice desktop entry
       - mkdir -p /app/share/applications
