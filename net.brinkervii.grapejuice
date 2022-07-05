@@ -90,4 +90,4 @@ modules:
       - type: git
         url: https://gitlab.com/brinkervii/grapejuice.git
       - type: dir
-        path: hacks  
+        path: patches
