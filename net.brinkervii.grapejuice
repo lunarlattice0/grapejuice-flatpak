@@ -85,9 +85,10 @@ modules:
     sources:
       - type: file
         url: https://github.com/Thelolguy1/grapejuice-wine-builds/releases/download/v1.0/wine72.tar.zst
-        # It was a terrible idea to package a 100+mb binary.
         sha256: 25753400d383c3f275bd2a7025036afbe995fa627137981ddf89eafc4c50ac73
       - type: git
         url: https://gitlab.com/brinkervii/grapejuice.git
+	tag: v5.1.1
+	commit: 6811a3776891a52e5569731ecf4d7937b5e4e755
       - type: dir
         path: patches
