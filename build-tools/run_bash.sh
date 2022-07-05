@@ -1,2 +1,2 @@
 #!/bin/bash
-flatpak run --command=bash com.gitlab.brinkervii.grapejuice
+flatpak run --command=bash net.brinkervii.grapejuice

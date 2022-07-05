@@ -1,5 +1,5 @@
 #!/bin/bash
 cd $PWD/..
-flatpak-builder build-dir/ com.gitlab.brinkervii.grapejuice.yml
-flatpak-builder --user --install --force-clean build-dir com.gitlab.brinkervii.grapejuice.yml
+flatpak-builder build-dir/ net.brinkervii.grapejuice.yml
+flatpak-builder --user --install --force-clean build-dir net.brinkervii.grapejuice.yml
 echo "Done building"
