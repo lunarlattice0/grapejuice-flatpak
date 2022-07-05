@@ -43,6 +43,7 @@ add-extensions:
                 download-if: active-gl-driver
                 enable-if: active-gl-driver
 modules:
+  - python3-requirements.yml
   - name: bundle-setup
     buildsystem: simple
     build-commands:
@@ -57,21 +58,18 @@ modules:
         url: data:/app/lib32%0A/app/lib/i386-linux-gnu%0A
   - name: grapejuice
     buildsystem: simple
-    build-options:
-      build-args:
-        - --share=network
     build-commands:
-      - cp user_settings.json /app
+      - install -Dm755 user_settings.json /app
       - PYTHONPATH=$(pwd)/src python3 -m grapejuice_packaging linux_package
       - cp -r build/linux_package/usr/* /app
       - mkdir /app/lib/python3.10
       - mkdir /app/lib/python3.10/pip_deps
       - mkdir /app/locales
-      - pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps
+      #- pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps
       # hack: overwrite grapejuice bins
-      - cp modified_bins/grapejuice /app/bin
-      - cp modified_bins/grapejuice-gui /app/bin
-      - cp modified_bins/grapejuiced /app/bin
+      - install -Dm755 modified_bins/grapejuice /app/bin
+      - install -Dm755 modified_bins/grapejuice-gui /app/bin
+      - install -Dm755 modified_bins/grapejuiced /app/bin
       # install wine
       - tar --use-compress-program=unzstd -xvf wine72.tar.zst
       - mv wine72 /app/patched_wine
@@ -91,4 +89,4 @@ modules:
         tag: v5.1.1
         commit: 6811a3776891a52e5569731ecf4d6937b5e4e755
       - type: dir
-        path: patches
+        path: misc_fixes
