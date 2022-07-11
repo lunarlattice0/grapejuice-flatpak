@@ -16,6 +16,11 @@ finish-args:
         - --allow=multiarch
 
 add-extensions:
+        net.brinkervii.grapejuice.wine:
+                directory: /app/patched_wine
+                version: stable
+                add-ld-path: lib32
+                no-autodownload: false
         org.freedesktop.Platform.Compat.i386:
                 directory: lib/i386-linux-gnu
                 version: '21.08'
@@ -71,8 +76,9 @@ modules:
       - install -Dm755 modified_bins/grapejuice-gui /app/bin
       - install -Dm755 modified_bins/grapejuiced /app/bin
       # install wine
-      - tar --use-compress-program=unzstd -xvf wine72.tar.zst
-      - mv wine72 /app/patched_wine
+      #- tar --use-compress-program=unzstd -xvf wine72.tar.zst
+      #- mv wine72 /app/patched_wine
+      #  disabled for extension
       # normal grapejuice desktop entries aren't exported anyway, so there's no need to delete them.
       # install grapejuice desktop entry
       - mkdir -p /app/share/applications
@@ -84,9 +90,9 @@ modules:
       - mkdir -p /app/share/metainfo/
       - install -Dm644 net.brinkervii.grapejuice.metainfo.xml /app/share/metainfo 
     sources:
-      - type: file
-        url: https://github.com/Thelolguy1/grapejuice-wine-builds/releases/download/v1.0/wine72.tar.zst
-        sha256: 25753400d383c3f275bd2a7025036afbe995fa627137981ddf89eafc4c50ac73
+      #- type: file
+      #  url: https://github.com/Thelolguy1/grapejuice-wine-builds/releases/download/v1.0/wine72.tar.zst
+      #  sha256: 25753400d383c3f275bd2a7025036afbe995fa627137981ddf89eafc4c50ac73
       - type: git
         url: https://gitlab.com/brinkervii/grapejuice.git
         tag: v5.1.1
