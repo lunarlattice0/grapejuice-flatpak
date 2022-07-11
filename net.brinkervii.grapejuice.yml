@@ -80,6 +80,9 @@ modules:
       # install grapejuice icons
       - mkdir -p /app/share/icons/
       - cp -r desktop_entries/hicolor /app/share/icons/
+      # install metainfo
+      - mkdir -p /app/share/metainfo/
+      - install -Dm644 net.brinkervii.grapejuice.metainfo.xml /app/share/metainfo 
     sources:
       - type: file
         url: https://github.com/Thelolguy1/grapejuice-wine-builds/releases/download/v1.0/wine72.tar.zst
