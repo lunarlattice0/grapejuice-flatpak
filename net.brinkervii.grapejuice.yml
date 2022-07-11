@@ -89,4 +89,4 @@ modules:
         tag: v5.1.1
         commit: 6811a3776891a52e5569731ecf4d6937b5e4e755
       - type: dir
-        path: misc_fixes
+        path: fixes
