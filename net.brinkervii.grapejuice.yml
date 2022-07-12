@@ -59,20 +59,22 @@ modules:
   - name: grapejuice
     buildsystem: simple
     build-commands:
+      # install usersettings
       - install -Dm755 user_settings.json /app
+      # use grapejuice packaging module
       - PYTHONPATH=$(pwd)/src python3 -m grapejuice_packaging linux_package
       - cp -r build/linux_package/usr/* /app
       - mkdir /app/lib/python3.10
       - mkdir /app/lib/python3.10/pip_deps
       - mkdir /app/locales
-      #- pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps
+      - pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps
       # hack: overwrite grapejuice bins
       - install -Dm755 modified_bins/grapejuice /app/bin
       - install -Dm755 modified_bins/grapejuice-gui /app/bin
       - install -Dm755 modified_bins/grapejuiced /app/bin
       # install wine
-      - tar --use-compress-program=unzstd -xvf wine72.tar.zst
-      - mv wine72 /app/patched_wine
+      - tar --use-compress-program=unzstd -xvf debuntu-wine-tkg-staging-fsync-git-7.1.r2.gc437a01e.tar.zst
+      - mv wine-tkg-staging-fsync-git-7.1.r2.gc437a01e /app/patched_wine
       # normal grapejuice desktop entries aren't exported anyway, so there's no need to delete them.
       # install grapejuice desktop entry
       - mkdir -p /app/share/applications
@@ -85,8 +87,8 @@ modules:
       - install -Dm644 net.brinkervii.grapejuice.metainfo.xml /app/share/metainfo 
     sources:
       - type: file
-        url: https://github.com/Thelolguy1/grapejuice-wine-builds/releases/download/v1.0/wine72.tar.zst
-        sha256: 25753400d383c3f275bd2a7025036afbe995fa627137981ddf89eafc4c50ac73
+        url: https://gitlab.com/brinkervii/wine-builds/-/raw/main/debuntu-wine-tkg-staging-fsync-git-7.1.r2.gc437a01e.tar.zst?inline=false
+        sha512: b60dd9628a592bef596049ff144ccdb7c2518afdbc70e32464f0d519122de4b2870ad8b7049f91acb876d302cde9189e899d54b615136d3bae1c0cc1bc2810da
       - type: git
         url: https://gitlab.com/brinkervii/grapejuice.git
         tag: v5.1.1
