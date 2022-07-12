@@ -67,7 +67,7 @@ modules:
       - mkdir /app/lib/python3.10
       - mkdir /app/lib/python3.10/pip_deps
       - mkdir /app/locales
-      - pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps
+      - pip3 install $(pwd) --target=/app/lib/python3.10/pip_deps --no-deps --no-index
       # hack: overwrite grapejuice bins
       - install -Dm755 modified_bins/grapejuice /app/bin
       - install -Dm755 modified_bins/grapejuice-gui /app/bin
